@@ -18,7 +18,7 @@ Here are the screenshot
 
 <br>
 
-<img src="https://github.com/dyavas21/uicrypto/blob/main/Screenshot_1636055089.png" width="800" /> <img src="https://github.com/dyavas21/uicrypto/blob/main/Screenshot_1636055093.png" width="800" />
+<img src="https://github.com/dyavas21/uicrypto/blob/main/Screenshot_1636055089.png" width="400" /> <img src="https://github.com/dyavas21/uicrypto/blob/main/Screenshot_1636055093.png" width="400" />
 
 
 
