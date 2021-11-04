@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uicrypto/widgets/Main%20Menu/analytic_menu.dart';
+import 'package:uicrypto/widgets/Main%20Menu/message_menu.dart';
+import 'package:uicrypto/widgets/Main%20Menu/transfer_menu.dart';
+import 'package:uicrypto/widgets/Main%20Menu/verify_menu.dart';
+import 'package:uicrypto/widgets/Main%20Menu/wallet_menu.dart';
+import 'package:uicrypto/widgets/Main%20Menu/withdraw_menu.dart';
+import 'package:uicrypto/widgets/crypto_card1.dart';
+import 'package:uicrypto/widgets/crypto_card2.dart';
+import 'package:uicrypto/widgets/crypto_card3.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -11,7 +20,7 @@ class MainPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 60,
+                  top: 10,
                 ),
                 child: Image.asset(
                   'assets/profile.png',
@@ -47,13 +56,12 @@ class MainPage extends StatelessWidget {
     Widget balance() {
       return Container(
         margin: EdgeInsets.only(
-          top: 30,
+          top: 20,
           left: 24,
           right: 24,
-          bottom: 30,
         ),
-        width: 327,
-        height: 210,
+        width: double.infinity,
+        height: 180,
         decoration: BoxDecoration(
           color: Color(0xff5735D2),
           borderRadius: BorderRadius.circular(35),
@@ -119,16 +127,6 @@ class MainPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 10,
-                      ),
-                      child: Image.asset(
-                        'assets/graph.png',
-                        width: 146.5,
-                        height: 74.5,
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -138,11 +136,126 @@ class MainPage extends StatelessWidget {
       );
     }
 
+    Widget myAssets() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 20,
+          left: 24,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'My Assets',
+              style: GoogleFonts.poppins(
+                color: Color(0xff282B6D),
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Container(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Row(
+                      children: [
+                        CryptoCard1(),
+                        CryptoCard2(),
+                        CryptoCard3(),
+                        CryptoCard1(),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget mainMenu() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 20,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+              ),
+              child: Text(
+                'Main Menu',
+                style: GoogleFonts.poppins(
+                  color: Color(0xff282B6D),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+                right: 24,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AnalyticMenu(),
+                  WithdrawMenu(),
+                  TransferMenu(),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+                right: 24,
+                top: 6,
+                bottom: 30,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  WalletMenu(),
+                  MessageMenu(),
+                  VerifyMenu(),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           header(),
+//           balance(),
+//           myAssets(),
+//           mainMenu(),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           header(),
           balance(),
+          myAssets(),
+          mainMenu(),
         ],
       ),
     );
