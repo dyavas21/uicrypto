@@ -1,11 +1,22 @@
 uicrypto
 
+<br>
+
 This is a Slicing UI using flutter
+
+<br>
 
 The design is from https://buildwithangga.com/pixel/
 
-Here are the screenshot
+<br>
 
 its still not done yet. hopefully it will finish soon 
 
-![image](https://user-images.githubusercontent.com/70715172/140406829-c2ff9419-b14e-4789-88e8-a744ffaf30db.png)
+<br>
+
+Here are the screenshot
+
+![Screenshot_1636055089](https://user-images.githubusercontent.com/70715172/140409397-5d0ba1ef-330a-48f8-a629-180588ea19d9.png)
+
+<br> 
+
